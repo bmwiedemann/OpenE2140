@@ -451,7 +451,7 @@ bool Utils::listDirectory(const std::string& dirPath, std::list<std::string>& di
     //Iterate and add all content of dir to paths
     directory_iterator endIter; // default construction yields past-the-end
     for (directory_iterator dirIter(dirPath); dirIter != endIter; ++dirIter) {
-        dirPaths.push_back(dirIter->path().leaf().string());
+        dirPaths.push_back(dirIter->path().filename().string());
     }
     return true;
 #else
